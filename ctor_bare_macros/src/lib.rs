@@ -58,6 +58,7 @@ pub fn register_ctor(attr: TokenStream, function: TokenStream) -> TokenStream {
 
         quote! {
             #[link_section = ".init_array"]
+            #[used]
             #[allow(non_upper_case_globals)]
             static #name_ident: extern "C" fn() = #name;
 

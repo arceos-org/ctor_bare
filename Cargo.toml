@@ -16,6 +16,3 @@ repository = "https://github.com/arceos-org/ctor_bare"
 keywords = ["arceos", "constructor", "no_std"]
 categories = ["development-tools::procedural-macro-helpers", "no-std"]
 
-[packages]
-ctor_bare = { path = "ctor_bare" }
-ctor_bare_macros = { path = "ctor_bare_macros" }
