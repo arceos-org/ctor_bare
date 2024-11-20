@@ -15,3 +15,7 @@ documentation = "https://arceos-org.github.io/constructor_array"
 repository = "https://github.com/arceos-org/constructor_array"
 keywords = ["arceos", "constructor"]
 categories = ["development-tools::procedural-macro-helpers", "no-std"]
+
+[packages]
+constructor_array = { path = "constructor_array" }
+constructor_array_macros = { path = "constructor_array_macros" }

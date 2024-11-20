@@ -2,9 +2,9 @@
 //!
 //! **DO NOT** use this crate directly. Use the [constructor_array](https://docs.rs/constructor_array) crate instead.
 //!
-//! After attching the `register_ctor` macro to the given function, a pointer pointing to it will be stored in the `ctors` section.
+//! After attching the `register_ctor` macro to the given function, a pointer pointing to it will be stored in the `.init_array` section.
 //! When the program is loaded, this section will be linked into the binary. The `invoke_ctors` function in the `constructor_array`
-//! crate will call all the constructor functions in the `ctors` section.
+//! crate will call all the constructor functions in the `.init_array` section.
 //!
 //! See the documentation of the [constructor_array](https://docs.rs/constructor_array) crate for more details.
 
@@ -33,7 +33,7 @@ pub fn register_ctor(attr: TokenStream, function: TokenStream) -> TokenStream {
     if let Item::Fn(func) = item {
         let name = &func.sig.ident;
         let name_str = name.to_string();
-        let name_ident = format_ident!("_CTOR_{}", name_str);
+        let name_ident = format_ident!("_INIT_{}", name_str);
         let output = &func.sig.output;
         // Constructor functions should not have any return value.
         if let syn::ReturnType::Type(_, _) = output {
@@ -57,7 +57,7 @@ pub fn register_ctor(attr: TokenStream, function: TokenStream) -> TokenStream {
         let block = &func.block;
 
         quote! {
-            #[link_section = "ctors"]
+            #[link_section = ".init_array"]
             #[allow(non_upper_case_globals)]
             static #name_ident: extern "C" fn() = #name;
 
