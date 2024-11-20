@@ -1,1 +1,1 @@
-/home/zyj/Code_file/ctor_bare/README.md
+../README.md
