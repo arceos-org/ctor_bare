@@ -1,8 +1,8 @@
-# constructor_array
+# ctor_bare
 
-[![Crates.io](https://img.shields.io/crates/v/constructor_array)](https://crates.io/crates/constructor_array)
-[![Docs.rs](https://docs.rs/constructor_array/badge.svg)](https://docs.rs/constructor_array)
-[![CI](https://github.com/arceos-org/constructor_array/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/arceos-org/constructor_array/actions/workflows/ci.yml)
+[![Crates.io](https://img.shields.io/crates/v/ctor_bare)](https://crates.io/crates/ctor_bare)
+[![Docs.rs](https://docs.rs/ctor_bare/badge.svg)](https://docs.rs/ctor_bare)
+[![CI](https://github.com/arceos-org/ctor_bare/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/arceos-org/ctor_bare/actions/workflows/ci.yml)
 
 
 Module initialization functions for Rust (like __attribute__((constructor)) in C/C++) under no_std.
@@ -17,12 +17,12 @@ It can support Linux, Windows, MacOS and other systems, and can be also used in 
 In Linux, Windows, MacOS and other systems, the `.init_array` section is a default section to store initialization functions. When the program starts, the system will call all functions in the `.init_array` section in order.
 
 
-When you are running your own operating system, you can call `constructor_array::invoke_ctors` to invoke all registered constructor functions.
+When you are running your own operating system, you can call `ctor_bare::call_ctors` to invoke all registered constructor functions.
 
 ## Usage
 
 ```rust
-use constructor_array::register_ctor;
+use ctor_bare::register_ctor;
 #[register_ctor]
 fn hello_world() {
     println!("Hello, world!");
@@ -49,10 +49,10 @@ Because the `.init_array` section is a default section to store initialization f
 .text : ALIGN(4K) {
     # other sections in the `.text` section
 
-    _init_array_start = .;
-    _init_array_end = _init_array_start + SIZEOF(.init_array);
+    __init_array_start = .;
+    __init_array_end = __init_array_start + SIZEOF(.init_array);
     *(.init_array .init_array.*)
-    . = _init_array_end;
+    . = __init_array_end;
 
     # other sections in the `.text` section
 }

@@ -1,6 +1,6 @@
 use std::sync::{atomic::AtomicUsize, Mutex};
 
-use constructor_array::*;
+use ctor_bare::*;
 
 static INIT_NUM: AtomicUsize = AtomicUsize::new(0);
 
@@ -20,7 +20,7 @@ fn init_vector() {
 }
 
 #[test]
-fn test_constructor_array() {
+fn test_ctor_bare() {
     // The constructor functions will be called before the main function.
     assert!(INIT_NUM.load(std::sync::atomic::Ordering::Relaxed) == 20);
     let vec = INIT_VEC.lock().unwrap();

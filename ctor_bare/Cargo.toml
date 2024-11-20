@@ -1,8 +1,8 @@
 [package]
-name = "constructor_array"
+name = "ctor_bare"
 edition = "2021"
 description = "Register constructor functions for Rust at complie time under no_std."
-documentation = "https://docs.rs/constructor_array"
+documentation = "https://docs.rs/ctor_bare"
 version.workspace = true
 authors.workspace = true
 license.workspace = true
@@ -13,4 +13,4 @@ categories.workspace = true
 readme = "README.md"
 
 [dependencies]
-constructor_array_macros = { path = "../constructor_array_macros" }
+ctor_bare_macros = { path = "../ctor_bare_macros" }

@@ -1,8 +1,8 @@
 [package]
-name = "constructor_array_macros"
+name = "ctor_bare_macros"
 edition = "2021"
 description = "Macros for registering constructor functions for Rust under no_std."
-documentation = "https://docs.rs/constructor_array_macros"
+documentation = "https://docs.rs/ctor_bare_macros"
 version.workspace = true
 authors.workspace = true
 license.workspace = true

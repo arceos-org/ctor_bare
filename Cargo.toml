@@ -2,8 +2,8 @@
 resolver = "2"
 
 members = [
-    "constructor_array",
-    "constructor_array_macros",
+    "ctor_bare",
+    "ctor_bare_macros",
 ]
 
 [workspace.package]
@@ -11,11 +11,11 @@ version = "0.1.0"
 authors = ["Youjie Zheng <Azure_stars@126.com>"]
 license = "GPL-3.0-or-later OR Apache-2.0 OR MulanPSL-2.0"
 homepage = "https://github.com/arceos-org/arceos"
-documentation = "https://arceos-org.github.io/constructor_array"
-repository = "https://github.com/arceos-org/constructor_array"
+documentation = "https://arceos-org.github.io/ctor_bare"
+repository = "https://github.com/arceos-org/ctor_bare"
 keywords = ["arceos", "constructor"]
 categories = ["development-tools::procedural-macro-helpers", "no-std"]
 
 [packages]
-constructor_array = { path = "constructor_array" }
-constructor_array_macros = { path = "constructor_array_macros" }
+ctor_bare = { path = "ctor_bare" }
+ctor_bare_macros = { path = "ctor_bare_macros" }
