@@ -1,0 +1,1 @@
+searchState.loadedDescShard("ctor_bare_macros", 0, "<strong>DO NOT</strong> use this crate directly. Use the ctor_bare crate …\nRegister a constructor function to be called before <code>main</code>.")
