@@ -1,6 +1,6 @@
 [package]
 name = "ctor_bare"
-edition = "2021"
+edition.workspace = true
 description = "Register constructor functions for Rust at complie time under no_std."
 documentation = "https://docs.rs/ctor_bare"
 version.workspace = true

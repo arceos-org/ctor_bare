@@ -1,6 +1,6 @@
 [package]
 name = "ctor_bare_macros"
-edition = "2021"
+edition.workspace = true
 description = "Macros for registering constructor functions for Rust under no_std."
 documentation = "https://docs.rs/ctor_bare_macros"
 version.workspace = true

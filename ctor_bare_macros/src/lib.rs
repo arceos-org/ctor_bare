@@ -11,7 +11,7 @@
 use proc_macro::TokenStream;
 use proc_macro2::Span;
 use quote::{format_ident, quote};
-use syn::{parse_macro_input, Error, Item};
+use syn::{Error, Item, parse_macro_input};
 
 /// Register a constructor function to be called before `main`.
 ///

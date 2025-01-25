@@ -1,4 +1,4 @@
-use std::sync::{atomic::AtomicUsize, Mutex};
+use std::sync::{Mutex, atomic::AtomicUsize};
 
 use ctor_bare::*;
 
